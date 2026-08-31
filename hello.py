@@ -1,7 +1,16 @@
-def add(x, y):
-    """ "This is an add function that takes two numbers and returns their sum."""
-    return x + y
+import hashlib
+import random
+
+
+def hello(name: str = "World") -> str:
+    return f"Hello, {name}!"
+
+
+def random_hash() -> str:
+    """Return a random SHA-256 hash."""
+    return hashlib.sha256(str(random.random()).encode()).hexdigest()
 
 
 if __name__ == "__main__":
-    print(add(2, 2))
+    print(hello())
+    print(random_hash())
